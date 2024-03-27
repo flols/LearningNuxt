@@ -17,7 +17,7 @@
               >Login</NuxtLink
             >
             <NuxtLink
-              to="/register"
+              to="/registration"
               class="text-white py-2 px-3 rounded-md text-sm font-medium hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
               >Registration
             </NuxtLink>
