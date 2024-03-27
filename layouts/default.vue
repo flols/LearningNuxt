@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h1>Default title</h1>
+    <Navbar />
     <slot />
   </div>
 </template>
