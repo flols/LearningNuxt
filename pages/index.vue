@@ -5,12 +5,12 @@
     <div
       class="grid md:grid-cols-4 sm:grid-cols-1 justify-items-center bg-cyan-50"
     >
-    <div v-for="n in 8">
+    <div v-for="movie in movies.results" :key="movie.id">
       <MovieCard 
-      :title="title" 
-      :date="date" 
-      :poster="poster" 
-      :movieid="movieid"
+      :movieid="movie.id"
+      :title="movie.title" 
+      :date="movie.release_date" 
+      :poster="movie.poster_path" 
     />
     </div>
   </div>
@@ -27,10 +27,10 @@
 </template>
 
 <script setup>
-import { useAsyncData } from 'nuxt/app';
-import { fetchMovies } from '~/services/themoviedb';
+// import { useAsyncData } from 'nuxt/app';
+// import { fetchMovies } from '~/services/themoviedb';
 
-const { data: movies, pending, error } = useAsyncData('movies', fetchMovies);
+// const { data: movies, pending, error } = useAsyncData('movies', fetchMovies);
 
 //Search Movie
 const searchError = ref(false);
@@ -44,11 +44,9 @@ const searchMovie = (searchInput) => {
   }
 };
 
-// Fetch Movie
-const movieid = ref(123);
-const title = ref("Dune 2");
-const date = ref("01-01-2000");
-const poster = ref("https://www.themoviedb.org/t/p/w1280/iRNbRAIGQQr5diGnjpwJFm0dgt4.jpg");
+// All Fetch Movie
+const { data: movies, error } = await useFetch("/api/movies");
+// console.log(movies);
 
 
 </script>
