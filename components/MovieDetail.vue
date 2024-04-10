@@ -8,7 +8,7 @@ defineProps(["title", "date", "poster", "revenue", "overview"]);
     <div class="bg-white rounded-lg shadow-md overflow-hidden">
       <img
         class="h-400 w-full object-cover"
-        :src="poster"
+        :src="`https://image.tmdb.org/t/p/w400` + poster"
         alt="Placeholder Image"
       />
     </div>
