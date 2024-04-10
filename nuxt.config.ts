@@ -9,4 +9,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
   ],
+  runtimeConfig: {
+    movieKey: process.env.MOVIE_API_KEY,
+  },
 });
